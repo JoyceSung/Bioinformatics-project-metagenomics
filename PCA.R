@@ -1,9 +1,7 @@
 # Load required library
-# If not installed, run: install.packages("ggplot2")
 library(ggplot2)
 
 # Step 1: Read data
-# This file contains species as rows and samples as columns
 df <- read.delim("/Users/joyce/Documents/UT-Austin/Courses/Bioinformatics/Project/Results/PCA/species_abundance_matrix.tsv",
                  row.names = 1, check.names = FALSE)
 
