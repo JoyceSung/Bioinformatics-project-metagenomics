@@ -75,16 +75,6 @@ for input in /NFSShare/Narwhal/metagenomic/kraken2_results/*.krona.input; do
     ktImportTaxonomy "$input" -o /NFSShare/Narwhal/metagenomic/kraken2_results/${sample}.krona.html
 done
 
-
-
-### Pipeline meaning
-Show:
-1. What microbes are present in each vaginal sample
-2. The relative abundance (with optional Bracken)
-3. Which taxa are dominant per sample or per group (US vs China)
-
-🧬 Microbial composition comparisons
-
-📊 Visualization (barplots, heatmaps, PCA, etc.)
+tc.)
 
 
