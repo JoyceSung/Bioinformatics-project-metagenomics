@@ -75,6 +75,4 @@ for input in /NFSShare/Narwhal/metagenomic/kraken2_results/*.krona.input; do
     ktImportTaxonomy "$input" -o /NFSShare/Narwhal/metagenomic/kraken2_results/${sample}.krona.html
 done
 
-tc.)
-
 
