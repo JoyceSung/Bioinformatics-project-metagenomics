@@ -1,0 +1,139 @@
+name,reads_clade,recalculated_percent
+Lactobacillus iners,64820,61.58845382766255
+Homo sapiens,39420,37.454749304018165
+Streptococcus constellatus,173,0.16437523159805031
+Agathobacter rectalis,119,0.11306735583912131
+Amygdalobacter nucleatus,75,0.07126093855406804
+Gardnerella vaginalis,59,0.056058604995866866
+Clostridioides difficile,29,0.02755422957423964
+Mageeibacillus indolicus,27,0.025653937879464496
+Blautia wexlerae,27,0.025653937879464496
+Ruminococcus bicirculans (ex Wegman et al. 2014),24,0.022803500337301778
+Faecalibacterium prausnitzii,23,0.0218533544899142
+Phocaeicola vulgatus,22,0.02090320864252663
+Gardnerella swidsinskii,22,0.02090320864252663
+Aerococcus christensenii,22,0.02090320864252663
+Methanohalophilus mahii,18,0.01710262525297633
+[Ruminococcus] torques,18,0.01710262525297633
+Roseburia faecis,18,0.01710262525297633
+Bacteroides uniformis,15,0.014252187710813609
+Bifidobacterium pseudocatenulatum,14,0.013302041863426036
+Alistipes onderdonkii,11,0.010451604321263314
+Bifidobacterium longum,11,0.010451604321263314
+[Ruminococcus] lactaris,11,0.010451604321263314
+Hoylesella buccalis,10,0.00950145847387574
+Fannyhessea vaginae,8,0.0076011667791005925
+Bacteroides fragilis,8,0.0076011667791005925
+Fenollaria sporofastidiosus,8,0.0076011667791005925
+Lactobacillus crispatus,7,0.006651020931713018
+Dorea longicatena,7,0.006651020931713018
+Chlamydia trachomatis,7,0.006651020931713018
+Fenollaria massiliensis,6,0.005700875084325444
+Faecalibacterium sp. I3-3-89,5,0.00475072923693787
+Cupriavidus cauae,5,0.00475072923693787
+Coprococcus eutactus,5,0.00475072923693787
+Ezakiella coagulans,4,0.0038005833895502963
+Alistipes ihumii,4,0.0038005833895502963
+Gemella sp. ND 6198,4,0.0038005833895502963
+Gardnerella leopoldii,4,0.0038005833895502963
+Enterococcus faecium,4,0.0038005833895502963
+Parabacteroides merdae,4,0.0038005833895502963
+Bacteroides thetaiotaomicron,4,0.0038005833895502963
+Anaerobutyricum hallii,4,0.0038005833895502963
+Dorea formicigenerans,4,0.0038005833895502963
+Bacteroides cellulosilyticus,4,0.0038005833895502963
+Acutalibacter muris,4,0.0038005833895502963
+Eubacterium ramulus,3,0.002850437542162722
+Mesomycoplasma hyorhinis,3,0.002850437542162722
+Catenibacterium sp. co_0103,3,0.002850437542162722
+Mobiluncus massiliensis,3,0.002850437542162722
+Lactobacillus johnsonii,3,0.002850437542162722
+Collinsella aerofaciens,3,0.002850437542162722
+Latilactobacillus sakei,3,0.002850437542162722
+Sphingomonas sp. FARSPH,3,0.002850437542162722
+Acinetobacter johnsonii,3,0.002850437542162722
+Lactobacillus delbrueckii,3,0.002850437542162722
+Sneathia vaginalis,3,0.002850437542162722
+Akkermansia muciniphila,3,0.002850437542162722
+Caulobacter sp. FWC26,3,0.002850437542162722
+Prevotella corporis,3,0.002850437542162722
+Limosilactobacillus oris,3,0.002850437542162722
+Enterobacter bugandensis,3,0.002850437542162722
+Anaerostipes hadrus,3,0.002850437542162722
+Segatella copri,3,0.002850437542162722
+Serratia grimesii,2,0.0019002916947751481
+Achromobacter pestifer,2,0.0019002916947751481
+Pectobacterium zantedeschiae,2,0.0019002916947751481
+Microbacterium sufflavum,2,0.0019002916947751481
+Campylobacter concisus,2,0.0019002916947751481
+Corynebacterium marquesiae,2,0.0019002916947751481
+Campylobacter lanienae,2,0.0019002916947751481
+Chryseobacterium shandongense,2,0.0019002916947751481
+Phocaeicola dorei,2,0.0019002916947751481
+Neobacillus sp. PS3-34,2,0.0019002916947751481
+Enterococcus sp. DIV2402,2,0.0019002916947751481
+Lawsonibacter asaccharolyticus,2,0.0019002916947751481
+Lactobacillus sp. ESL0785,2,0.0019002916947751481
+Niallia sp. RD1,2,0.0019002916947751481
+Roseburia intestinalis,2,0.0019002916947751481
+Roseburia rectibacter,2,0.0019002916947751481
+Coprococcus catus,2,0.0019002916947751481
+Faecalibacterium sp. i21-0019-B1,2,0.0019002916947751481
+Lawsonella clevelandensis,2,0.0019002916947751481
+Streptococcus salivarius,1,0.0009501458473875741
+Echinicola soli,1,0.0009501458473875741
+Escherichia coli,1,0.0009501458473875741
+Geobacillus subterraneus,1,0.0009501458473875741
+Roseburia hominis,1,0.0009501458473875741
+Mycobacterium canetti,1,0.0009501458473875741
+Acinetobacter baumannii,1,0.0009501458473875741
+Xanthomonas albilineans,1,0.0009501458473875741
+Actinobacillus equuli,1,0.0009501458473875741
+Marinomonas pontica,1,0.0009501458473875741
+Faecalibacillus intestinalis,1,0.0009501458473875741
+Burkholderia thailandensis,1,0.0009501458473875741
+Bacillus safensis,1,0.0009501458473875741
+Neisseria subflava,1,0.0009501458473875741
+Phyllobacterium zundukense,1,0.0009501458473875741
+Phyllobacterium sp. 628,1,0.0009501458473875741
+Bacillus velezensis,1,0.0009501458473875741
+Mediterraneibacter gnavus,1,0.0009501458473875741
+Bifidobacterium adolescentis,1,0.0009501458473875741
+Bifidobacterium catenulatum,1,0.0009501458473875741
+Listeria grayi,1,0.0009501458473875741
+Listeria monocytogenes,1,0.0009501458473875741
+Spirochaeta africana,1,0.0009501458473875741
+Nosocomiicoccus massiliensis,1,0.0009501458473875741
+Sneathia sanguinegens,1,0.0009501458473875741
+Thermus sp. NEB1569,1,0.0009501458473875741
+Staphylococcus saccharolyticus,1,0.0009501458473875741
+Coprococcus comes,1,0.0009501458473875741
+Kordia sp. SMS9,1,0.0009501458473875741
+Microlunatus phosphovorus,1,0.0009501458473875741
+Lachnospira eligens,1,0.0009501458473875741
+Aristaeella lactis,1,0.0009501458473875741
+Eubacterium ventriosum,1,0.0009501458473875741
+Eggerthella lenta,1,0.0009501458473875741
+Vescimonas coprocola,1,0.0009501458473875741
+Mycoplasma putrefaciens,1,0.0009501458473875741
+Vulcanimicrobium alpinum,1,0.0009501458473875741
+Lacticaseibacillus paracasei,1,0.0009501458473875741
+Schaalia turicensis,1,0.0009501458473875741
+Lactococcus cremoris,1,0.0009501458473875741
+Faecalibacterium wellingii,1,0.0009501458473875741
+Bacteroides salyersiae,1,0.0009501458473875741
+Ligilactobacillus salivarius,1,0.0009501458473875741
+Faecalibacterium sp. I4-3-84,1,0.0009501458473875741
+Faecalibacterium sp. I4-1-79,1,0.0009501458473875741
+Faecalibacterium sp. I3-3-33,1,0.0009501458473875741
+Alistipes shahii,1,0.0009501458473875741
+Alistipes senegalensis,1,0.0009501458473875741
+Alistipes communis,1,0.0009501458473875741
+Faecalibacterium sp. IP-3-29,1,0.0009501458473875741
+Moorella thermoacetica,1,0.0009501458473875741
+Prevotella melaninogenica,1,0.0009501458473875741
+Prevotella jejuni,1,0.0009501458473875741
+Anaerococcus nagyae,1,0.0009501458473875741
+Simiaoa sunii,1,0.0009501458473875741
+Odoribacter splanchnicus,1,0.0009501458473875741
+Lactobacillus mulieris,1,0.0009501458473875741
