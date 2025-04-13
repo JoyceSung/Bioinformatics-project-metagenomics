@@ -27,4 +27,3 @@ for file in glob(os.path.join(input_dir, "*.f_report.txt")):
 # Convert to DataFrame
 abundance_df = pd.DataFrame.from_dict(abundance_data, orient="index").fillna(0).astype(int)
 abundance_df.T.to_csv(output_file, sep="\t")
-print(f"✅ Abundance matrix saved as: {output_file}")
