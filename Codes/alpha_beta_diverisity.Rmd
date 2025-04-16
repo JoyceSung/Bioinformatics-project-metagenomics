@@ -1,0 +1,224 @@
+---
+title: "Bioinformatics Final Project"
+author: "Chiayu, Katlheen, Paola"
+date: "2025-04-11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Install and Load libraries
+
+```{r, message=FALSE}
+#install vegan package 
+#install.packages('vegan',repos=('https://vegandevs.r-universe.dev','https://cloud.r-project.org'))
+
+#load
+library(tibble)
+library(vegan)
+library(tidyverse)
+library(rstatix)
+library(ggpubr)
+
+
+```
+
+## Initializator
+
+```{r}
+ 
+store_vectors<- list()
+filename<-vector()
+```
+## Open Data and Preprocessing
+```{r}
+ 
+#open files in the directory
+file_list<-list.files("~/Documents/Data_04.02/kraken2_results/", pattern = "\\.csv$", full.names = TRUE)
+
+###create a otu table
+for(i in file_list){
+    #open data
+    data= read.csv(i,header=T)
+
+    #name of the file to store
+    name<- sub("\\_species.csv$", "", basename(i))
+    filename<- append(filename,name)
+    #vector contain taxon name  and clade_reads
+    otu_vector <- setNames(data$reads_clade, data$name)
+    
+    #convert in 1-row dataframe
+    otu_table <- as.data.frame(t(otu_vector))
+
+    #store vector in a list of vectors
+    store_vectors[[name]] <- otu_table}
+    
+
+otu_table <- bind_rows(store_vectors) %>%
+  replace(is.na(.), 0)
+
+rownames(otu_table)<-filename
+
+###create metadata
+metadata<-as.data.frame(rownames(otu_table))
+metadata$country<-ifelse(grepl("^E", metadata$`rownames(otu_table)`), "USA", "Asia")
+colnames(metadata)<-c("sample","country")
+
+```
+## Alpha Diversity
+
+### Shannon
+```{r}
+shannon <- diversity(otu_table, index = "shannon")
+shannon_df<- data.frame(shannon,country = metadata$country)
+```
+
+### Check data normality
+
+> The normality evaluation below shows p-value < 0.05 for Asia, thus the alternative hypothesis that Asia metagenome data does not follow normal distribution. On the other hand,
+USA metagenome data follow normally distribution (p > 0.05). Since one group does not follow normal distribution we consider a non-parametric test for comparison (Wilcxon-test).
+
+```{r}
+shapiro.test(shannon_df$shannon[shannon_df$country =="Asia"])
+shapiro.test(shannon_df$shannon[shannon_df$country =="USA"])
+
+
+```
+
+### Wilcox test- Shannon
+
+>The comparison demonstrates that the null hypothesis is rejected (p-value < 0.05). Thus, there is statiscal difference in diversity between the countries. The chart above shows that the average diveristy is higher in Asia compared to USA.It indicates that there is difference in diversity between the two regions.
+
+```{r}
+wilcox.test(shannon ~ country, data = shannon_df)
+```
+
+### Shannon Diversity visualization
+```{r}
+ggplot(shannon_df, aes(x = country, y = shannon, fill = country)) +
+  geom_boxplot()+
+  labs(title="Shannon Diversity", y="Shannon Diveristy", x="Country")+
+  scale_fill_manual(values=c("steelblue", "pink"))+
+  theme_bw() +
+  theme(axis.line = element_line(colour = "black"),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.border = element_blank(),
+    panel.background = element_blank())+
+  stat_compare_means(method = "wilcox.test",label.x.npc = "right")
+```
+
+### Richness
+
+> Richeness evaluates the number of different species in a community. The chart belows shows that 
+
+```{r}
+richness <- specnumber(otu_table)
+richness_df<- data.frame(richness,country = metadata$country)
+```
+
+
+### T-test - Richeness
+
+> Even though Asia shows an average richness higher than USA,  no statiscal difference was oberserved in number of species between these two countries.
+
+```{r}
+t.test(richness ~ country, data = richness_df)
+```
+
+### Richeness visualization
+```{r}
+ggplot(richness_df, aes(x = country, y = richness, fill = country)) +
+  geom_boxplot()+
+  labs(title="Richness", y="Richeness", x="Country")+
+  scale_fill_manual(values=c("steelblue", "pink"))+
+  theme_bw() +
+  theme(axis.line = element_line(colour = "black"),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.border = element_blank(),
+    panel.background = element_blank())+
+  stat_compare_means(method = "t.test",label.x.npc = "right",
+                     label.y = max(richness_df$richness) * 1.05)
+```
+
+### Eveness
+```{r}
+evenness = shannon / log(richness)
+evenness_df<- data.frame(evenness,country = metadata$country)
+
+```
+
+### Check data normality
+
+> The normality evaluation below shows p-value < 0.05 for Asia, thus the alternative hypothesis that Asia metagenome data does not follow normal distribution. On the other hand,
+USA metagenome data follow normally distribution (p > 0.05). Since one group does not follow normal distribution we consider a non-parametric test for comparison (Wilcxon-test).
+
+```{r}
+shapiro.test(evenness_df$evenness[evenness_df$country =="Asia"])
+shapiro.test(evenness_df$evenness[evenness_df$country =="USA"])
+
+```
+
+### Wilcox test- Evenness
+
+> The comparison demonstrates that the null hypothesis is rejected (p-value < 0.05). Thus, there is statiscal difference in eveness between the countries. The chart above shows that the average species evennes is higher in Asia compared to USA.It indicates that there is amore balanced microbial community in Asia samples.
+
+```{r}
+wilcox.test(evenness ~ country, data = evenness_df)
+```
+
+### Eveness visualization
+```{r}
+ggplot(evenness_df, aes(x = country, y = evenness, fill = country)) +
+  geom_boxplot()+
+  labs(title="Evenness", y="Evenness", x="Country")+
+  scale_fill_manual(values=c("steelblue", "pink"))+
+  theme_bw() +
+  theme(axis.line = element_line(colour = "black"),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.border = element_blank(),
+    panel.background = element_blank())+
+  stat_compare_means(method = "wilcox.test",label.x.npc = "right",
+                     label.y = max(evenness_df$evenness) * 1.05)
+```
+
+## Beta Diversity
+```{r}
+dist_matrix <- vegdist(otu_table, method = "bray")
+
+#Metric
+PCOA = cmdscale(dist_matrix, eig = TRUE, k = 2)
+
+#Calculate how much variation each PCoA axis can explain
+eigenvectors = PCOA$eig / sum(PCOA$eig)
+eigenvectors
+```
+>First and second eigenvectors - PCoA1/2 or MDS1/2 #3.068188e-01  1.464590e-01,respectively.
+
+### Add x -y axis coordinates in metadata for each sample and assign a color 
+```{r}
+metadata$MDS1 = PCOA$points[,1]
+metadata$MDS2 = PCOA$points[,2]
+```
+
+### Plot the PCoA
+```{r}
+ggplot(metadata, aes(MDS1, MDS2, color = country))+
+  geom_point(size = 3)+
+  theme_bw() + 
+  xlab("MDS1[30.1%]")+
+  ylab("MDS2[15%]")
+```
+
+### Performing  Permutational Multivariate Analysis of Variance - permanova test
+
+>We can conclude that metagenome data between Asia and USA can explain approximately 30% the variation in the community composition.
+
+```{r}
+perm = adonis2(dist_matrix~ country, data = metadata)
+perm
+```
